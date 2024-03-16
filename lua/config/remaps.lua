@@ -12,13 +12,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
--- CLIPBOARD
-vim.opt.clipboard = "unnamedplus"
-vim.keymap.set("n", "<leader>y", "\"+y") -- copy into system clipboard
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
-
-
 -- [[ Telescope ]]
 local function telescope_live_grep_open_files()
     require('telescope.builtin').find_files {

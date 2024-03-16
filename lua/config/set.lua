@@ -32,7 +32,15 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
-
 -- tabs
 vim.opt.tabpagemax = 15
 vim.opt.showtabline = 2
+
+--[[
+    Clipboard
+    required to install xclip ( for debian ):
+    $ sudo apt install xclip
+    Without this thing copy/paste for system clipboard does not work
+]]
+--
+vim.opt.clipboard = 'unnamedplus'
