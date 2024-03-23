@@ -3,10 +3,10 @@ require('neo-tree').setup({
         git_status = {
             symbols = {
                 -- Change type
-                added     = "+", -- or "✚", but this is redundant info if you use git_status_colors on the name
-                modified  = ".", -- or "", but this is redundant info if you use git_status_colors on the name
-                deleted   = "-", -- this can only be used in the git_status source
-                renamed   = ">", -- this can only be used in the git_status source
+                added     = "+",
+                modified  = ".",
+                deleted   = "-",
+                renamed   = ">",
                 -- Status type
                 untracked = "?",
                 ignored   = "/",
@@ -20,6 +20,22 @@ require('neo-tree').setup({
         filtered_items = {
             hide_dotfiles = false,
             hide_gitignored = false,
+            hide_by_name = {
+                "node_modules",
+                '__pycache__',  -- python compiled binaries
+                'env',          -- python dependecies env folder
+                'node_modules', -- js libraries
+            },
+            hide_by_pattern = { -- uses glob style patterns
+                "*.meta",
+            },
+            never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
+                "node_modules",
+                "env"
+            },
+            never_show_by_pattern = { -- uses glob style patterns
+                --".null-ls_*",
+            },
         }
     }
 })
