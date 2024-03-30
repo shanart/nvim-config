@@ -2,7 +2,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.opt.guicursor = ""
-vim.o.mouse = ""
+vim.o.mouse = "a"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
