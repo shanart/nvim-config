@@ -172,4 +172,12 @@ require('lazy').setup({
 
   -- use prettierrc
   'numToStr/prettierrc.nvim',
+
+  -- git signs
+  {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require("gitsigns").setup {}
+    end,
+  }
 })
