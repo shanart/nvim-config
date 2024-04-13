@@ -7,4 +7,4 @@ vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 vim.cmd('autocmd BufRead,BufNewFile *.hbs set filetype=html')
 
 
-vim.cmd [[ colorscheme onedark ]]
+vim.cmd [[ colorscheme kanagawa ]]

@@ -14,7 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  -- [[ Theme ]]
+  -- [[ Themes ]]
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -23,6 +23,9 @@ require('lazy').setup({
   {
     'navarasu/onedark.nvim',
     priority = 1000,
+  },
+  {
+    'rebelot/kanagawa.nvim'
   },
 
   -- [[ bottom status bar ]]
@@ -45,18 +48,6 @@ require('lazy').setup({
     opts = {},
   },
 
-  -- [[ file tree ]]
-  -- {
-  --     "nvim-tree/nvim-tree.lua",
-  --     version = "*",
-  --     lazy = false,
-  --     dependencies = {
-  --         "nvim-tree/nvim-web-devicons",
-  --     },
-  --     config = function()
-  --         require("nvim-tree").setup {}
-  --     end,
-  -- },
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -64,20 +55,16 @@ require('lazy').setup({
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   },
+
+  -- [[ Autocompletion ]]
   {
-    -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
       {
         'L3MON4D3/LuaSnip',
         build = (function()
-          -- Build Step is needed for regex support in snippets
-          -- This step is not supported in many windows environments
-          -- Remove the below condition to re-enable on windows
           if vim.fn.has 'win32' == 1 then
             return
           end
@@ -85,17 +72,13 @@ require('lazy').setup({
         end)(),
       },
       'saadparwaiz1/cmp_luasnip',
-
-      -- Adds LSP completion capabilities
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
-
-      -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
     },
   },
   -- [[ show helper window with available keys ]]
-  { 'folke/which-key.nvim',  opts = {} },
+  -- { 'folke/which-key.nvim',  opts = {} },
 
   -- [[ Telescope ]]
   {
@@ -105,20 +88,12 @@ require('lazy').setup({
       'nvim-lua/plenary.nvim',
       { -- If encountering errors, see telescope-fzf-native README for installation instructions
         'nvim-telescope/telescope-fzf-native.nvim',
-
-        -- `build` is used to run some command when the plugin is installed/updated.
-        -- This is only run then, not every time Neovim starts up.
         build = 'make',
-
-        -- `cond` is a condition used to determine whether this plugin should be
-        -- installed and loaded.
         cond = function()
           return vim.fn.executable 'make' == 1
         end,
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
-
-      -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
     },
   },
@@ -131,13 +106,7 @@ require('lazy').setup({
       -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
-
-      -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim',       opts = {} },
-
-      -- Additional lua configuration, makes nvim stuff amazing!
-      -- 'folke/neodev.nvim',
     },
   },
   {
@@ -179,5 +148,7 @@ require('lazy').setup({
     config = function()
       require("gitsigns").setup {}
     end,
-  }
+  },
+
+  "kdheepak/lazygit.nvim"
 })
