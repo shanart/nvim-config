@@ -39,9 +39,3 @@ require('neo-tree').setup({
     }
   }
 })
-
--- local function refresh_all()
---   require("neo-tree.sources.manager").refresh("filesystem")
---   require("neo-tree.sources.manager").refresh("git_status")
---   require("neo-tree.sources.manager").refresh("buffers")
--- end
