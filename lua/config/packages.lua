@@ -140,7 +140,7 @@ require('lazy').setup({
   { 'numToStr/Comment.nvim', opts = {} },
 
   -- use prettierrc
-  'numToStr/prettierrc.nvim',
+  -- 'numToStr/prettierrc.nvim',
 
   -- git signs
   {
