@@ -11,6 +11,7 @@ require('telescope').setup {
       'env',          -- python dependencies env folder
       'node_modules', -- js libraries
       'dist',         -- compilled package
+      'etc/app',
     }
   },
 }
