@@ -88,17 +88,21 @@ require('lazy').setup({
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
         dependencies = {
-            'nvim-lua/plenary.nvim',
+            "nvim-lua/plenary.nvim",
             { -- If encountering errors, see telescope-fzf-native README for installation instructions
-                'nvim-telescope/telescope-fzf-native.nvim',
-                build = 'make',
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build = "make",
                 cond = function()
-                    return vim.fn.executable 'make' == 1
+                    return vim.fn.executable("make") == 1
                 end,
             },
-            { 'nvim-telescope/telescope-ui-select.nvim' },
-            { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
+            { "nvim-telescope/telescope-ui-select.nvim" },
+            { "nvim-tree/nvim-web-devicons",            enabled = vim.g.have_nerd_font },
         },
+        config = function()
+            pcall(require('telescope').load_extension, 'fzf')
+            pcall(require('telescope').load_extension, 'ui-select')
+        end
     },
 
     -- [[ LSP and Treesitter ]]
@@ -120,7 +124,6 @@ require('lazy').setup({
         },
         build = ':TSUpdate',
     },
-
     {
         "ray-x/go.nvim",
         dependencies = { -- optional packages
@@ -153,5 +156,12 @@ require('lazy').setup({
         end,
     },
 
-    "kdheepak/lazygit.nvim"
+    "kdheepak/lazygit.nvim",
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio"
+        }
+    }
 })
