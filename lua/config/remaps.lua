@@ -47,3 +47,5 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 -- vim.keymap.set('n', '<leader>fw', function()
 --   require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") })
 -- end)
+
+vim.keymap.set("n", "<c-b>", "<cmd>Neotree toggle<cr>")

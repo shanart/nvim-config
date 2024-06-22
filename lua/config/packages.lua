@@ -20,15 +20,36 @@ require('lazy').setup({
         lazy = false,
         priority = 1000,
         init = function()
-            vim.cmd("colorscheme tokyonight-night")
+            vim.cmd("colorscheme tokyonight-moon")
         end
     },
+    -- {
+    --     'navarasu/onedark.nvim',
+    --     -- priority = 1000,
+    -- },
     {
-        'navarasu/onedark.nvim',
+        "ellisonleao/gruvbox.nvim",
         priority = 1000,
+        config = true,
+        opts = {
+            contrast = "hard",
+            italic = {
+                strings = false,
+                emphasis = false,
+                comments = false,
+                operators = false,
+                folds = false,
+            },
+        },
+        -- init = function()
+        --     vim.cmd("colorscheme gruvbox")
+        -- end
     },
     {
-        'rebelot/kanagawa.nvim'
+        'rebelot/kanagawa.nvim',
+        -- init = function()
+        --     vim.cmd("colorscheme kanagawa-wave")
+        -- end
     },
 
     -- [[ bottom status bar ]]
@@ -163,5 +184,13 @@ require('lazy').setup({
             "mfussenegger/nvim-dap",
             "nvim-neotest/nvim-nio"
         }
-    }
+    },
+    {
+        'folke/todo-comments.nvim',
+        event = 'VimEnter',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        opts = {
+            signs = false
+        }
+    },
 })
