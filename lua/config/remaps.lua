@@ -49,3 +49,4 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 -- end)
 
 vim.keymap.set("n", "<c-b>", "<cmd>Neotree toggle<cr>")
+vim.keymap.set("n", "<c-a>", "<cmd>Neotree reveal<cr>")
