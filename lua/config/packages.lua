@@ -14,6 +14,27 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+    {
+        "MunifTanjim/prettier.nvim"
+    },
+    {
+        "jose-elias-alvarez/null-ls.nvim"
+    },
+    {
+        "MunifTanjim/prettier.nvim",
+        init = function()
+            require("prettier").setup({
+                bin = 'prettier',
+                filetypes = {
+                    "javascript",
+                    "javascriptreact",
+                    "typescript",
+                    "typescriptreact",
+                },
+            })
+        end
+    },
+
     -- [[ Themes ]]
     {
         "folke/tokyonight.nvim",
