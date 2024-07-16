@@ -15,7 +15,7 @@ require('telescope').setup {
         },
 
         -- some projects has very deep nested folder structure
-        -- and vertical layout cut file path and names
+        -- and default layout cut file path and names
         layout_strategy = 'vertical',
         layout_config = { height = 0.9 },
     },
