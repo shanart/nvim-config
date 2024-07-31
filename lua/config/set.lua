@@ -46,3 +46,7 @@ vim.opt.showtabline = 2
 vim.opt.clipboard = 'unnamedplus'
 
 -- vim.o.background = "light"
+
+-- spellcheck
+vim.opt.spell = true
+vim.opt.spelllang = 'en_us'

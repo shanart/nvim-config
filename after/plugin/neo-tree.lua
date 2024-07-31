@@ -22,8 +22,8 @@ require('neo-tree').setup({
             hide_gitignored = false,
             hide_by_name = {
                 "node_modules",
-                '__pycache__', -- python compiled binaries
-                'env',    -- python dependencies env folder
+                '__pycache__',  -- python compiled binaries
+                'env',          -- python dependencies env folder
                 'node_modules', -- js libraries
             },
             hide_by_pattern = { -- uses glob style patterns
