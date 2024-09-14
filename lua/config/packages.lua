@@ -15,44 +15,17 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
     -- [[ Themes ]]
+    { 'rebelot/kanagawa.nvim' },
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
+        'catppuccin/nvim',
+        name = "catppuccin",
         priority = 1000,
         init = function()
-            vim.cmd("colorscheme tokyonight-moon")
+            vim.cmd("colorscheme catppuccin-mocha")
         end
     },
-    -- {
-    --     'navarasu/onedark.nvim',
-    --     -- priority = 1000,
-    -- },
-    {
-        "ellisonleao/gruvbox.nvim",
-        priority = 1000,
-        config = true,
-        opts = {
-            contrast = "hard",
-            italic = {
-                strings = false,
-                emphasis = false,
-                comments = false,
-                operators = false,
-                folds = false,
-            },
-        },
-        -- init = function()
-        --     vim.cmd("colorscheme gruvbox")
-        -- end
-    },
-    {
-        'rebelot/kanagawa.nvim',
-        -- init = function()
-        --     vim.cmd("colorscheme kanagawa-wave")
-        -- end
-    },
 
-    -- [[ bottom status bar ]]
+    -- [[ Bottom status bar ]]
     {
         'nvim-lualine/lualine.nvim',
         opts = {
