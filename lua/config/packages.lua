@@ -15,14 +15,18 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
     -- [[ Themes ]]
-    { 'rebelot/kanagawa.nvim' },
+    {
+        'rebelot/kanagawa.nvim',
+        opts = {
+            commentStyle = { italic = false },
+            keywordStyle = { italic = false },
+        },
+        init = function()
+            vim.cmd("colorscheme kanagawa")
+        end
+    },
     {
         'catppuccin/nvim',
-        name = "catppuccin",
-        priority = 1000,
-        init = function()
-            vim.cmd("colorscheme catppuccin-mocha")
-        end
     },
 
     -- [[ Bottom status bar ]]
@@ -137,7 +141,7 @@ require('lazy').setup({
     },
 
     -- "gc" to comment visual regions/lines
-    { 'numToStr/Comment.nvim', opts = {} },
+    { 'numToStr/Comment.nvim',  opts = {} },
 
     -- use prettierrc
     -- 'numToStr/prettierrc.nvim',
@@ -166,4 +170,6 @@ require('lazy').setup({
             signs = false
         }
     },
+
+    { 'akinsho/toggleterm.nvim' }
 })
